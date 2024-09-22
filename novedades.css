@@ -1,0 +1,373 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'open sans', sans-serif;
+}
+body{
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    background-size: cover;
+    background-position: center;
+}
+h1{
+    color: #03176d;
+    text-align: center;
+    margin: 15px;
+}
+.botones {
+    height: 80px;
+    display: flex;
+    gap: 0px;
+    align-items: center;
+    margin: 50px;
+
+  }
+  
+  .btn {
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    color: white;
+  }
+  
+  .si {
+    background-color:  #03176d; /* Verde para "Sí" */
+  }
+  
+  .no {
+    background-color:  #03176d; /* Rojo para "No" */
+  }
+  
+  .btn:hover {
+    opacity: 0.8;
+  }
+
+  h2{
+    color: #03176d;
+    text-align: center;
+    margin: 20px;
+  }
+
+li{
+    list-style: none;
+}
+a{
+    text-align: none;
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+}
+a:hover{
+    color: yellow;
+}
+/*HEADER*/
+header{
+    position: relative;
+    height: 150px;
+}
+.navar{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #03176d;
+}
+.navar .logo a{
+    font-size: 1.5rem;
+    font-weight: bold;
+    height: 30px;
+}
+
+.navar .link{
+    display: flex;
+    gap: 2rem;
+}
+.navar .toggle_btn{
+    color: aliceblue;
+    font-size: 1.5rem;
+    cursor: pointer;
+    visibility: hidden;
+}
+.sabradios{
+    background-color: brown;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+}
+
+.sabradios:hover{
+    scale: 1.05;
+    color: white;
+}
+.sabradios:active{
+    scale: 0.95;
+}
+.dropdown_menu{
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    width: 300px;
+    height: 0;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.dropdown_menu.open{
+    height: 240px;
+}
+.dropdown_menu li{
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dropdown_menu .sabradios{
+    width: 100px;
+    display: flex;
+    justify-content: center;
+}
+section#hero{
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: rgb(0, 0, 0);
+
+}
+
+
+/* RESONDIVE DESING */
+@media (max-width:922px){
+    .navar .link,
+    .navar .sabradios{
+        display: none;
+    }
+    .navar .toggle_btn{
+        display: block;
+        visibility: hidden; 
+    }
+    .dropdown_menu{
+        display: block;
+
+    }
+}
+@media (max-width:576px){
+    .dropdown_menu{
+        left: 2rem;
+        width: unset;
+        z-index: 1000;
+    }
+}
+
+
+.hola{
+    position: center;
+    height: 100%;
+    top: 200%;
+}
+
+.hola{
+    background-color: rgb(255, 255, 255);
+    font-family: helvetica Neue, helvetica;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+
+}
+
+.nose {
+    display: absolute;
+    flex-wrap: wrap;
+    min-height: 100vh;
+}
+
+
+.card {
+    position: relative;
+    width: 15em;
+    height: 20em;
+    margin: 20px;
+}
+
+.card .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .5s;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.card .front {
+    transform: perspective(600px) rotateY(0deg);
+    box-shadow: 0 5px 10px #000;
+}
+
+.card .front img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card .front h3 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    background: rgba(0, 0, 0, .4);
+    text-align: center;
+}
+
+.card .back {
+    transform: perspective(600px) rotateY(180deg);
+    background: #03176d;
+    padding: 15px;
+    color: #f3f3f3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: 0 5px 10px #000;
+}
+
+.card .back .link {
+    border-top: solid 1px #f3f3f3;
+    height: 50px;
+    line-height: 50px;
+}
+
+.card .back .link a {
+    color: #f3f3f3;
+}
+
+.card .back h3 {
+    font-size: 30px;
+    margin-top: 20px;
+    letter-spacing: 2px;
+}
+
+.card .back p {
+    letter-spacing: 1px;
+}
+
+.card:hover .front {
+    transform: perspective(600px) rotateY(180deg);
+}
+
+.card:hover .back {
+    transform: perspective(600px) rotateY(360deg);
+}
+
+.AJA{
+    text-align: center;
+    color: #03176d;
+    font-size: 50px;
+    margin: 80px;
+}
+
+
+
+footer {
+    background-color: #03176d;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer .container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.social-media {
+    margin-top: 10px;
+} 
+
+.social-link {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.social-link:hover {
+    text-decoration: underline;
+}
+
+.card-order {
+    display: flex;
+    align-content: space-around;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-flow: row;
+}
+.comentarios {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+  }
+  textarea {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+  }
+  input[type="text"], input[type="file"] {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .h2o {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin: 30px;
+    align-items: center;
+    display: flex;
+  }

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./estadisticas.css">
+    <link rel="stylesheet" href="script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" integrity="sha512-poSrvjfoBHxVw5Q2awEsya5daC0p00C8SKN74aVJrs7XLeZAi+3+13ahRhHm8zdAFbI2+/SUIrKYLvGBJf9H3A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Document</title>
+</head>
+<body>
+    <script src="h14.js"></script>
+    <header>
+    <div class="navar">
+        <div class="logo"><a href="#">ADA</a></div>
+        <ul class="link">
+            <li><a href="index.html">inicio</a></li>
+            <li><a href="novedades.html">novedades</a></li>
+            <li><a href="estadisticas.html">estadisticas</a></li>
+            <li><a href="usuario.html">usuario</a></li>
+        </ul>
+        <div class="toggle_btn">
+        <i class="fa-solid fa-bars"></i>
+    
+    <div class="dropdown_menu">
+        <li><a href="index.html">inicio</a></li>
+        <li><a href="novedades.html">novedades</a></li>
+        <li><a href="estadisticas.html">estadisticas</a></li>
+        <li><a href="./usuario.html">usuario</a></li>
+        </div>
+</div>
+</div>
+</header>
+
+<script>
+    const togglebtn = document.querySelector('.toggle_btn')
+    const togglebtnIcon = document.querySelector('.toggle_btn i')
+    const dropdownmenu = document.querySelector('.dropdown_menu')
+
+    togglebtn.onclick = function () {
+        dropdownmenu.classList.toggle('open')
+        const isOpen = dropdownmenu.classList.contains('open')
+
+        togglebtnIcon.classList = isOpen
+        ? 'fa-solid fa-xmark'
+        : 'fa-solid fa-bars'
+    } 
+</script>
+
+<main>
+    <section id="hero">
+       <div class="botones">
+            <button class="btn si"><a href="estadisticas.html">Restaurante</a></button>
+            <button class="btn no"><a href="./estadi_asis.html">Asistencia</a></button>
+          </div>
+    </section>
+</main>
+
+<div class="hija"></div>
+<div style="width: 80%; margin: 0 auto;">
+    <h2>Asistencia de Estudiantes - Septiembre 2024</h2>
+    <canvas id="asistenciaChart"></canvas> <!-- Canvas para la gráfica -->
+</div>
+
+<script src="estadis.js"></script>
+
+ <!-- Footer -->
+ <footer>
+    <div class="container">
+        <p>&copy; 2024 Mi Empresa. Todos los derechos reservados.</p>
+        <ul class="footer-links">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Sobre nosotros</a></li>
+            <li><a href="#">Servicios</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+        <p>Síguenos en:</p>
+        <div class="social-media">
+            <a href="#" class="social-link">Facebook</a>
+            <a href="#" class="social-link">Twitter</a>
+            <a href="#" class="social-link">Instagram</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

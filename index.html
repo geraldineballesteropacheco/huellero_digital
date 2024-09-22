@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" integrity="sha512-poSrvjfoBHxVw5Q2awEsya5daC0p00C8SKN74aVJrs7XLeZAi+3+13ahRhHm8zdAFbI2+/SUIrKYLvGBJf9H3A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title> RESTAURAND </title>
+</head>
+<body>
+    <script src="h14.js"></script>
+    <header>
+    <div class="navar">
+        <div class="logo"><a href="./proyecto-de-grado-2024/img/animal.png">ADA</a></div>
+        <ul class="link">
+            <li><a href="./index.html">inicio</a></li>
+            <li><a href="./novedades.html">novedades</a></li>
+            <li><a href="./estadisticas.html">estadisticas</a></li>
+            <li><a href="./usuario.html">usuario</a></li>
+        </ul>
+        <div class="toggle_btn">
+        <i class="fa-solid fa-bars"></i>
+    
+    <div class="dropdown_menu">
+        <li><a href="./index.html">inicio</a></li>
+        <li><a href="./novedades.html">novedades</a></li>
+        <li><a href="./estadisticas.html">estadisticas</a></li>
+        <li><a href="./usuario.html">usuario</a></li>
+        </div>
+</div>
+</div>
+</header>
+
+<script>
+    const togglebtn = document.querySelector('.toggle_btn')
+    const togglebtnIcon = document.querySelector('.toggle_btn i')
+    const dropdownmenu = document.querySelector('.dropdown_menu')
+
+    togglebtn.onclick = function () {
+        dropdownmenu.classList.toggle('open')
+        const isOpen = dropdownmenu.classList.contains('open')
+
+        togglebtnIcon.classList = isOpen
+        ? 'fa-solid fa-xmark'
+        : 'fa-solid fa-bars'
+    }
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="./estilos.css">
+</head>
+<body class="hola">
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+                <div class="icons">
+                    <img src="./img/1.png" >
+                </div>
+                <p>bienvenido</p>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="icons">
+                    <img src="./img/2 - copia.png" >
+                    </div>
+                <p>bienvenido</p>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="icons">
+                     <img src="./img/3.png" >
+                   </div>
+                <p>bienvenido</p>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="icons">
+                     <img src="./img/4.png" >
+                   </div>
+                <p>bienvenido</p>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="icons">
+                    <img src="./img/6.png" >
+                 </div>
+                <p>bienvenido</p>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="icons">
+                     <img src="./img/4.png" >
+                   </div>
+                <p>bienvenido</p>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="icons">
+                    <img src="./img/6.png" >
+                 </div>
+                <p>bienvenido</p>
+            </div>
+
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            loop: true,
+            coverflowEffect: {
+                depth: 500,
+                modifier: 1,
+                slideShadows: true,
+                rotate: -10,
+                stretch: 0
+            }
+        });
+    </script>
+    <main>
+        <section id="hero">
+            <h1>¿ya tienes una cuenta?</h1>
+            <div class="botones">
+                <button class="btn si"><a href="./proyecto-de-grado-2024/usuario.html"></a>Sí</button>
+                <button class="btn no"><a href="./proyecto-de-grado-2024/usuario.html"></a>No</button>
+              </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Mi Empresa. Todos los derechos reservados.</p>
+            <ul class="footer-links">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Sobre nosotros</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+            <p>Síguenos en:</p>
+            <div class="social-media">
+                <a href="#" class="social-link">Facebook</a>
+                <a href="#" class="social-link">Twitter</a>
+                <a href="#" class="social-link">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+</html>

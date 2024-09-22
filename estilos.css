@@ -1,0 +1,279 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'open sans', sans-serif;
+}
+body{
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    background-size: cover;
+    background-position: center;
+}
+.logo-container {
+    flex-shrink: 0;
+}
+
+.logo {
+    height: 5px; 
+}
+li{
+    list-style: none;
+}
+a{
+    text-align: none;
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+}
+a:hover{
+    color: yellow;
+}
+/*HEADER*/
+header{
+    position: relative;
+    height: 150px;
+}
+.navar{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #03176d;
+}
+.navar .logo a{
+    font-size: 1.5rem;
+    font-weight: bold;
+    height: 30px;
+}
+
+.navar .link{
+    display: flex;
+    gap: 2rem;
+}
+.navar .toggle_btn{
+    color: aliceblue;
+    font-size: 1.5rem;
+    cursor: pointer;
+    visibility: hidden;
+}
+.sabradios{
+    background-color: brown;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+}
+
+.sabradios:hover{
+    scale: 1.05;
+    color: white;
+}
+.sabradios:active{
+    scale: 0.95;
+}
+.dropdown_menu{
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    width: 300px;
+    height: 0;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.dropdown_menu.open{
+    height: 240px;
+}
+.dropdown_menu li{
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dropdown_menu .sabradios{
+    width: 100px;
+    display: flex;
+    justify-content: center;
+}
+section#hero{
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: rgb(0, 0, 0);
+
+}
+
+
+/* RESONDIVE DESING */
+@media (max-width:922px){
+    .navar .link,
+    .navar .sabradios{
+        display: none;
+    }
+    .navar .toggle_btn{
+        display: block;
+        visibility: hidden; 
+    }
+    .dropdown_menu{
+        display: block;
+
+    }
+}
+@media (max-width:576px){
+    .dropdown_menu{
+        left: 2rem;
+        width: unset;
+        z-index: 1000;
+    }
+}
+
+
+.hola{
+    position: center;
+    height: 100%;
+    top: 200%;
+}
+
+.hola{
+    background-color: rgb(255, 255, 255);
+    font-family: helvetica Neue, helvetica;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+
+}
+
+.swiper{
+    width: 100%;
+    padding-top: 150px 0 50px 0;
+}
+
+.swiper-slide {
+    width: 450px;
+    height: 400px;
+    background-color: #2d0194;
+    box-shadow: 0 0 20px rgba(12, 1, 53, 0.984);
+    padding: 40px;
+    text-align: center;
+}
+
+
+.icons img{
+    top: 300px;
+    width: 375px;
+    height: 320px;
+    border-color: black;
+}
+footer {
+    background-color: #03176d;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer .container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.social-media {
+    margin-top: 10px;
+} 
+
+.social-link {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.social-link:hover {
+    text-decoration: underline;
+}
+
+h1{
+    height: 50px;
+}
+
+.botones {
+    height: 30px;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .btn {
+    width: 80px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    color: white;
+  }
+  
+  .si {
+    background-color: #4CAF50; /* Verde para "Sí" */
+  }
+  
+  .no {
+    background-color: #f44336; /* Rojo para "No" */
+  }
+  
+  .btn:hover {
+    opacity: 0.8;
+  }
+
+  .paco{
+    align-items: center;
+    display: flex;
+    text-align: center;
+    background-color:  #03176d;
+    height: 320%;
+    width: 70%;
+    margin: 200px;
+  }
+
+  .imagen{
+    width: 320px;
+    height: 320px;
+    margin: 30px;
+  }  
+
+  .texto{
+    font-size: 17px;
+    color: white;
+  }

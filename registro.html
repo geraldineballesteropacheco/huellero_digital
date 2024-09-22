@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./registro.css">
+    <link rel="stylesheet" href="css/bootstrap-min.css">
+    <link rel="stylesheet" href="app.css" type="text/css" />
+    <link rel="stylesheet" href="script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" integrity="sha512-poSrvjfoBHxVw5Q2awEsya5daC0p00C8SKN74aVJrs7XLeZAi+3+13ahRhHm8zdAFbI2+/SUIrKYLvGBJf9H3A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Document</title>
+</head>
+<body>
+    <script src="h14.js"></script>
+    <header>
+    <div class="navar">
+        <div class="logo"><a href="#">ADA</a></div>
+        <ul class="link">
+            <li><a href="./index.html">inicio</a></li>
+            <li><a href="novedades.html">novedades</a></li>
+            <li><a href="estadisticas.html">estadisticas</a></li>
+            <li><a href="usuario.html">usuario</a></li>
+        </ul>
+        <div class="toggle_btn">
+        <i class="fa-solid fa-bars"></i>
+    
+    <div class="dropdown_menu">
+        <li><a href="./index.html">inicio</a></li>
+        <li><a href="novedades.html">novedades</a></li>
+        <li><a href="estadisticas.html">estadisticas</a></li>
+        <li><a href="usuario.html">usuario</a></li>
+        </div>
+</div>
+</div>
+</header>
+
+<main>
+    <section id="hero">
+       <div class="botones">
+            <button class="btn si"><a href="usuario.html">Iniciar Sesión</a></button>
+            <button class="btn no"><a href="registro.html">Registro Estudiante</a></button>
+            <button class="btn no"><a href="abm.html">Registro Abministrador</a></button>
+          </div>
+    </section>
+</main>
+<div class="hija">
+<div class="registration-container">
+    <!-- Imagen de la huella digital -->
+    <img src="img/huella.webp" alt="Huella Digital" class="fingerprint-image">
+
+    <!-- Formulario de registro -->
+    <form action="#" method="post" class="registration-form">
+        <input type="text" name="username" class="input-field" placeholder="Nombre" required>
+        <input type="text" name="username" class="input-field" placeholder="apellido" required>
+        <input type="text" name="username" class="input-field" placeholder="grado" required>
+        <input type="text" name="username" class="input-field" placeholder="grupo" required>
+        <input type="text" name="username" class="input-field" placeholder="fecha nacimiento" required>
+        <input type="password" name="pin" class="input-field" placeholder="Introduce tu PIN" maxlength="6" required>
+        <button type="submit" class="submit-btn">Registrarse</button>
+    </form>
+</div>
+</div>
+<script>
+    const togglebtn = document.querySelector('.toggle_btn')
+    const togglebtnIcon = document.querySelector('.toggle_btn i')
+    const dropdownmenu = document.querySelector('.dropdown_menu')
+
+    togglebtn.onclick = function () {
+        dropdownmenu.classList.toggle('open')
+        const isOpen = dropdownmenu.classList.contains('open')
+
+        togglebtnIcon.classList = isOpen
+        ? 'fa-solid fa-xmark'
+        : 'fa-solid fa-bars'
+    }
+</script>
+
+<div class="hello">
+    <div id="Container">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <div class="navbar-brand" href="#" style="color: white;">Fingerprint WebAPI</div>
+            </div>
+            <ul class="nav navbar-nav">
+              <li id="Reader" class="active">
+                <a href="#" style="color: white;" onclick="toggle_visibility(['content-reader','content-capture']);setActive('Reader','Capture')">
+                    Reader</a>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav">
+              <li id="Capture" class="">
+                <a href="#" style="color: white;" onclick="toggle_visibility(['content-capture','content-reader']);setActive('Capture','Reader')">
+                    Capture</a>
+              </li>
+            </ul>                       
+          </div>
+        </nav>
+       <div id="Scores">
+           <h5>Scan Quality : <input type="text" id="qualityInputBox" size="20" style="background-color:#DCDCDC;text-align:center;"></h5> 
+
+       </div>
+        <div id="content-capture" style="display : none;">    
+            <div id="status"></div>            
+            <div id="imagediv"></div>
+            <div id="contentButtons">
+                <table width=70% align="center">
+                    <tr>
+                        <td>
+                            <input type="button" class="btn btn-primary" id="clearButton" value="Clear" onclick="Javascript:onClear()">
+                        </td>
+                        <td data-toggle="tooltip" title="Will work with the .png format.">
+                            <input type="button" class="btn btn-primary" id="save" value="Save">
+                        </td>
+                        <td>
+                            <input type="button" class="btn btn-primary" id="start" value="Start" onclick="Javascript:onStart()">
+                        </td>
+                        <td>
+                           <input type="button" class="btn btn-primary" id="stop" value="Stop" onclick="Javascript:onStop()">
+                        </td>
+                        <td>
+                            <input type="button" class="btn btn-primary" id="info" value="Info" onclick="Javascript:onGetInfo()">
+                        </td>
+                </table>
+            </div>
+       
+            <div id="imageGallery">
+            </div>
+            <div id="deviceInfo">           
+            </div>
+
+            <div id="saveAndFormats">
+             
+              <form name="myForm" style ="border : solid grey;padding:5px;">
+              <b>Acquire Formats :</b><br>
+              <table>
+                <tr data-toggle="tooltip" title="Will save data to a .raw file.">
+                  <td>
+                    <input type="checkbox" name="Raw" value="1" onclick="checkOnly(this)"> RAW  <br>
+                  </td>
+                </tr>
+                <tr data-toggle="tooltip" title="Will save data to a Intermediate file">
+                  <td>
+              <input type="checkbox" name="Intermediate" value="2" onclick="checkOnly(this)"> Feature Set<br>
+                  </td>
+                </tr>
+                <tr data-toggle="tooltip" title="Will save data to a .wsq file.">
+                  <td>
+              <input type="checkbox" name="Compressed" value="3" onclick="checkOnly(this)"> WSQ<br>
+                  </td>
+                </tr>
+                <tr data-toggle="tooltip" title="Will save data to a .png file.">
+                  <td>
+              <input type="checkbox" name="PngImage" checked="true" value="4" onclick="checkOnly(this)"> PNG
+                  </td>
+                </tr>
+              </table>
+              </form>
+              <br>
+             <input type="button" class="btn btn-primary" id="saveImagePng" value="Export" onclick="Javascript:onImageDownload()">
+            </div>
+
+        </div>
+
+        <div id="content-reader">  
+            <h4>Select Reader :</h4>
+            <select class="form-control" id="readersDropDown" onchange="selectChangeEvent()">
+            </select>
+            <div id="readerDivButtons">
+                <table width=70% align="center">
+                        <tr>
+                            <td>
+                                <input type="button" class="btn btn-primary" id="refreshList" value="Refresh List" 
+                                    onclick="Javascript:readersDropDownPopulate(false)">
+                            </td>
+                            <td>
+                                <input type="button" class="btn btn-primary" id="capabilities" value="Capabilities"
+                                data-toggle="modal" data-target="#myModal" onclick="Javascript:populatePopUpModal()">
+                            </td>  
+                        </tr>
+                </table>
+
+              <!-- Modal - Pop Up window content-->
+              <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+                
+                  <!-- Modal content -->
+                  <div class="modal-content" id="modalContent" >
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">Reader Information</h4>
+                    </div>
+                    <div class="modal-body" id="ReaderInformationFromDropDown">
+                      
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+  
+            </div>
+        </div>
+
+</div>
+
+    <script src="lib/jquery.min.js"></script> 
+    <script src="lib/bootstrap.min.js"></script>
+    <script src="scripts/es6-shim.js"></script>
+    <script src="scripts/websdk.client.bundle.min.js"></script>
+    <script src="scripts/fingerprint.sdk.min.js"></script>
+    <script src="app.js"></script>
+  </div>
+
+
+ <!-- Footer -->
+ <footer>
+    <div class="container">
+        <p>&copy; 2024 Mi Empresa. Todos los derechos reservados.</p>
+        <ul class="footer-links">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Sobre nosotros</a></li>
+            <li><a href="#">Servicios</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+        <p>Síguenos en:</p>
+        <div class="social-media">
+            <a href="#" class="social-link">Facebook</a>
+            <a href="#" class="social-link">Twitter</a>
+            <a href="#" class="social-link">Instagram</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
